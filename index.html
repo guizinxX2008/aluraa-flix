@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Flix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 20px;
+            border-bottom: 2px solid #333;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .banner {
+            width: 100%;
+            height: 400px;
+            background: url('https://picsum.photos/1920/400') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .banner-text {
+            font-size: 36px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        .offer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .offer h2 {
+            font-size: 28px;
+            margin: 0 0 10px;
+        }
+        .offer p {
+            font-size: 18px;
+            margin: 0 0 20px;
+        }
+        .offer-button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #e50914;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .offer-button:hover {
+            background-color: #b81d2b;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .movie {
+            display: inline-block;
+            margin: 10px;
+            width: 200px;
+            background: url('https://picsum.photos/200/300') no-repeat center center/cover;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .movie img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 10px 20px;
+            border-top: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alura Flix</h1>
+    </header>
+    <div class="banner">
+        <div class="banner-text">
+            Assine Agora e Tenha Acesso Ilimitado!
+        </div>
+    </div>
+    <div class="content">
+        <div class="offer">
+            <h2>Oferta Especial para Novos Usuários</h2>
+            <p>Assine o Alura Flix por apenas 12x de R$120 por mês!</p>
+            <a href="#" class="offer-button" id="subscribe-button">Assine Agora</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Alura Flix. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Página de filmes oculta -->
+    <div id="films-page" style="display: none;">
+        <header>
+            <h1>Alura Flix</h1>
+            <nav>
+                <a href="#" onclick="showOffer()">Início</a>
+                <a href="#">Filmes</a>
+                <a href="#">Séries</a>
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+            </nav>
+        </header>
+        <div class="banner">
+            <div class="banner-text">
+                Explore Nossos Filmes
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Em Alta</h2>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?1" alt="Filme 1">
+                    <p>Filme 1</p>
+                </div>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?2" alt="Filme 2">
+                    <p>Filme 2</p>
+                </div>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?3" alt="Filme 3">
+                    <p>Filme 3</p>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Novidades</h2>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?4" alt="Série 1">
+                    <p>Série 1</p>
+                </div>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?5" alt="Série 2">
+                    <p>Série 2</p>
+                </div>
+                <div class="movie">
+                    <img src="https://picsum.photos/200/300?6" alt="Série 3">
+                    <p>Série 3</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Alura Flix. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('subscribe-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.content').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            document.getElementById('films-page').style.display = 'block';
+        });
+
+        function showOffer() {
+            document.querySelector('.content').style.display = 'block';
+            document.querySelector('footer').style.display = 'block';
+            document.getElementById('films-page').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
